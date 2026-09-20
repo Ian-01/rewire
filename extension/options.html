@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Retrace Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main class="page">
+    <section class="card" aria-labelledby="title">
+      <h1 id="title">Retrace</h1>
+      <p class="lede">
+        Retrace quietly logs your LeetCode practice so your tutor can see your
+        progress. Set your ID once — that's all there is to do here.
+      </p>
+
+      <p class="reminder" id="reminder" hidden>
+        No student ID set yet — practice sessions won't be logged until you add one.
+      </p>
+
+      <form id="form" novalidate>
+        <label for="student-id">Your Student ID</label>
+        <input
+          type="text"
+          id="student-id"
+          name="student-id"
+          autocomplete="off"
+          spellcheck="false"
+          placeholder="e.g. jsong-2026"
+        >
+        <div class="actions">
+          <button type="submit">Save</button>
+          <span id="status" class="status" role="status" aria-live="polite"></span>
+        </div>
+      </form>
+    </section>
+  </main>
+  <script src="options.js"></script>
+</body>
+</html>

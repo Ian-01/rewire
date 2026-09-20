@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Retrace",
+  "version": "0.1.0",
+  "description": "Quietly logs LeetCode practice submissions to Retrace so tutors can follow a student's progress. No popups, no interruptions.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://leetcode.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://leetcode.com/*"],
+      "js": ["interceptor.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": ["https://leetcode.com/*"],
+      "js": ["relay.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "action": {
+    "default_title": "Retrace — open settings"
+  }
+}
